@@ -39,8 +39,7 @@ Assim, a ampla capacidade de mutacidade do Sars-CoV-2, bem como a mudança de fo
 
 Dado a quantidade reduzida de vacinas e o agravamento da doença, esse trabalho procura propor subgrupos de prioridade para imunização, considerando os fatores de risco. Além disso,  procura encontrar novos grupos de prioridade, dada a  mudança no padrão de mortalidade da doença.
 
-> 
-> Link para vídeo de apresentação da proposta do projeto (máximo 3 minutos).
+[Link para vídeo de apresentação da proposta do projeto.](https://youtu.be/59DZYWyoovo)
 
 # Perguntas de Pesquisa
 
