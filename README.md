@@ -43,7 +43,7 @@ Dado a quantidade reduzida de vacinas e o agravamento da doença, esse trabalho 
 
 # Perguntas de Pesquisa
 
-- Qual perfil da população Brasileira está mais suscetível a sofrer ao óbito por meio de infecção por COVID-19?
+- Qual perfil da população Brasileira está mais suscetível ao óbito por meio de infecção por COVID-19?
 - O programa de vacina está priorizando os grupos identificados?
 - Quais características implicam em maior mortalidade por COVID-19?
 
