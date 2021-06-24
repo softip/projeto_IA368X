@@ -108,6 +108,7 @@ Para responder às perguntas de pesquisa foi utilizada uma base de dados forneci
 | Base de Dados | Endereço na Web | Resumo descritivo |
 |---------------|-----------------|-------------------|
 | api-covid-ce  | [api-covid-ce](https://github.com/integrasus/api-covid-ce) | Este repositório trata da disponibilização da API pública do IntegraSUS sobre dados relacionados ao boletim epidemiológico covid-19 do estado do Ceará.|
+|   IBGE-CE     | [IBGE-CE](https://www.ibge.gov.br/cidades-e-estados/ce.html) | API pública do IBGE com dados populacionais do estado do Ceará.|
 
 # Qual o esquema/dicionário desse banco (o formato é livre)?
 
