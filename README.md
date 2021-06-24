@@ -166,11 +166,12 @@ Para o pré-processamento foram realizadas limpeza e transformação de dados, u
 [Notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
 
 O conjunto de dados do IntegraSUS, utilizado neste trabalho, possui muitos dados faltantes, principalmente os dados relacionados as comorbidades que são de interesse de estudo. Cerca de 99% dos dados faltantes estavam relacionados as comorbidades, uma hipótese para a falta de dados relacionados as comorbidades é de que essas informações são coletadas apenas quando o paciente é internado ou busca por atendimento em uma unidade de saúde. A figura abaixo apresenta que a maior parte dos dados faltantes são de pessoas que não foram internadas.
-![grafico1](https://drive.google.com/file/d/10udjg-HMVEZ6zqDEw_yGHRtWbdX8nC3q/view?usp=sharing)
+
+![alt text](https://drive.google.com/file/d/10udjg-HMVEZ6zqDEw_yGHRtWbdX8nC3q/view?usp=sharing)
 
 O número total de óbitos do dataset (21.963), 96,8% foram confirmados positivos para COVID-19, em sua maioria homens (55,9%). A faixa etária que mais se contaminou possuía entre 30 e 40 anos e eram do sexo feminino. Apesar de grande parte da população do Ceará possuir entre 10 e 19 anos, a grande maioria dos óbitos acontece entre os 75 e 80 anos. Pode-se observar também que em 93,2% dos casos positivos para COVID-19 a internação não foi necessária. Demograficamente, a cidade com maior número de óbitos é Fortaleza (capital do Ceará), seguida por Caucaia (16,3 km de distância da capital) e Maracanaú (23,4 km de distância da capital), conforme pode ser visto na figura abaixo:
 
-![grafico2.png](https://drive.google.com/file/d/10udjg-HMVEZ6zqDEw_yGHRtWbdX8nC3q/view?usp=sharing)
+![alt text](https://drive.google.com/file/d/10udjg-HMVEZ6zqDEw_yGHRtWbdX8nC3q/view?usp=sharing)
 
 Como resultados podemos observar que cerca de 45% dos óbitos pela doença no estado do Ceará foram pacientes que não possuíam comorbidade nenhuma e 31% dos pacientes possuíam pelo menos uma comorbidade. A maioria dos óbitos por COVID-19 eram de pacientes com problemas cardiovasculares e diabetes. Dados da secretaria de saúde do Distrito Federal (DF) exemplificam esse fato: dos mais de 300 mil infectados, em abril de 2021, pouco mais de 17 mil eram portadores de comorbidades, totalizando 5,6% dos casos. A grande maioria desses pacientes (56,6%) são cardiopatas, seguido de pacientes obesos (7,3%) e imunossuprimidos (5,6%). Além disso, no DF dentre os mais de 5 mil mortos pela COVID-19, 85,1% tinham outras doenças que agravaram o quadro da infecção [6]. 
 
