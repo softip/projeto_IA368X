@@ -1,5 +1,5 @@
-# Projeto: Ciência de dados aplicada na definição de subgrupos prioritários para o Plano Nacional de Vacinação contra COVID-19.
-# Project: Data science applied in the definition of priority subgroups for the National Vaccination Plan against COVID-19.
+# Projeto: Estudo de fatores associados a mortes devido a COVID-19
+# Project: Study of factors associated with deaths due to COVID-19
 
 # Apresentação
 
@@ -14,37 +14,32 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 
 # Descrição Resumida do Projeto
-O novo coronavírus (SARS-CoV-2), vírus causador da doença COVID-19, foi identificado pela primeira vez na cidade de Wuhan, localizada na China, em dezembro de 2019 [1]. Rapidamente, o vírus se disseminou mundialmente, o que levou a Organização Mundial de Saúde (OMS) a declarar que a epidemia da COVID-19 constituía uma Emergência de Saúde Pública de Importância Internacional, em 30 de janeiro de 2020 e, em 11 de março de 2020, uma pandemia [1, 2].
+Este projeto utiliza algoritmos de Machine Learn para tentar identificar os fatores associados à morte por a COVID-19 em comparação com mortes decorridas de outras causas.
 
-O primeiro registro no Brasil ocorreu em 26 de fevereiro de 2020 e o primeiro óbito em 20 de março do mesmo ano. Com a ascensão dos números de óbitos, a pandemia tem se apresentado como um dos maiores desafios sanitários mundial deste século [1–3]. Atualmente, a população brasileira totaliza cerca de 348 mil mortes pela doença, além de aproximadamente 13 milhões de casos confirmados [4].
+Neste trabalho foram utilizados dados anonimizados de pacientes com COVID-19 do estado do Ceará, que foram disponibilizados publicamente pela IntegraSUS/CE.
 
-A alta taxa de letalidade se dá devido sua alta transmissibilidade. A transmissão do vírus ocorre através de gotículas contaminadas de secreções da orofaringe de uma pessoa infectada, por contato com objetos e superfícies contaminadas, ou por via fecal-oral. Além disso, a transmissão é intensificada pelo elevado tempo de incubação (cerca de 5-6 dias, variando de 0 a 24 dias), e devido a pessoas assintomáticas, pré-sintomáticas ou com sintomas leves poderem espalhar a doença [2].
+Este dataset possui 1.873.583 de registros de pacientes do estado do Ceará acompanhados com sintomas de COVID-19. O dataset possui 43 features (colunas), sendo algumas relevantes para este trabalho, como por exemplo a relação de comorbidades do paciente. Apesar de possuir muitos registros, o dataset apresenta aproximadamente 97% de informações faltantes em relação às comorbidades e outros fatores de risco. Mais informações sobre esse dataset podem ser obtidas no notebook de análise exploratória.
 
-O SARS-CoV-2 foi nomeado como síndrome respiratória aguda grave coronavírus-2 devido à sua alta homologia (aproximadamente 80%) com SARS-CoV, que causou a síndrome do desconforto respiratório agudo e alta mortalidade durante 2002–2003. O vírus SARS-CoV-2 afeta principalmente o sistema respiratório. Além de envolver sintomas relacionados à infecção do trato respiratório inferior, incluindo febre, tosse seca e dispneia, cefaleia, tontura, fraqueza generalizada, vômito e diarreia [5].
+Além dos dados do IntegraSUS/CE foram utilizados dados demográficos dos municípios onde os pacientes residem, esses dados foram obtidos do portal do IBGE. Esse dataset possui informações demográficas, como área do município, população, renda, número de matrícula e índice de desenvolvimento Humano Municipal - IDHM. Esse dataset foi utilizado para verificar se fatores sociais podem estar associados às mortes por COVID-19.
 
-Um número de mortes de pacientes com doenças graves continuou a aumentar em todo o mundo. Estudos epidemiológicos têm mostrado que a mortalidade acomete mais pessoas idosas e portadoras de doenças crônicas subjacentes, que requerem hospitalização, cuidados intensivos e uso de ventiladores mecânicos [2, 5].
+Os datasets utilizados neste notebook são resultados das etapas de pré-processamento: limpeza de dados e transformação de dados. Para compreender melhor como os dados foram tratados é possível acessar os notebooks de preparação dos dados Dataset1:RandomForest e Dataset2:Regression COX
 
-Dados da secretaria de saúde do Distrito Federal (DF) exemplificam esse fato: dos mais de 300 mil infectados, pouco mais de 17 mil são portadores de comorbidades, totalizando 17,2% dos casos. A grande maioria desses pacientes (56,6%) são cardiopatas, seguido de pacientes obesos (7,3%) e imunossuprimidos (5,6%). Além disso, no DF dentre os mais de 5 mil mortos pela COVID-19, 85,1% tinham outras doenças que agravaram o quadro da infecção [6].
+Este trabalho apresenta a aplicação de dois algoritmos de Machine Learning. O primeiro utiliza o algoritmo de florestas aleatórias (Random Forest) para classificar as mortes em decorrência de COVID-19 ou por outras causas. O Random Forest, assim como outros algoritmos baseados em árvores de decisão possibilitam o estudo de como a classificação foi realizada, de forma a compreender quais características ou fatores contribuem mais para o evento, nesse caso a morte por COVID-19.
 
-O mesmo pode ser observado em estudos realizados pela Caixa de Previdência e Assistência aos Servidores da Fundação Nacional de Saúde (CAPESESP) que avaliou 600 pessoas em 2020, acometidas ou não pelo Sars-CoV-2. Esse estudo revelou que a taxa de mortalidade por COVID-19 de pessoas diabéticas é 10% maior que a taxa de mortalidade entre pessoas saudáveis, devido a vulnerabilidade do paciente diabético em lidar com o quadro infeccioso do vírus [7]. O mesmo é pontuado por Marinho e colaboradores, que apontaram a desregulação imunológica e a inflamação metabólica do paciente diabético como pontos chave capazes de reduzir a habilidade do organismo em desenvolver cura contra a doença, justificando a maior taxa de mortalidade associada à essa população [8].
+O segundo algoritmo utilizado é o Regression COX, que faz parte da família de algoritmos de análise de sobrevivência. O modelo criado tem o objetivo de prever quais características (fatores) contribuem para a morte devido a COVID-19.
 
-Em 16/12/2020 o governo brasileiro lançou o Plano Nacional de Imunização - PNI. O plano apresenta a caracterização dos grupos de risco para agravamento e óbito pela COVID-19. De acordo com o PNI, os principais fatores de risco associados a progressão para formas graves da doença e ao óbito são:
-
-idade superior a 60 anos; diabetes mellitus; doença pulmonar obstrutiva crônica (DPOC); doença renal; doenças cardiovasculares e cerebrovasculares; hipertensão arterial grave; indivíduos transplantados de órgãos sólidos; anemia falciforme; câncer e obesidade mórbida (IMC≥40). 
-
-O PNI define 14 grupos prioritários para vacinação, sendo eles: Trabalhadores de Saúde; Pessoas de 80 anos e mais; Pessoas de 75 a 79 anos; Pessoas de 70 a 74 anos; Pessoas de 65 a 69 anos; Pessoas de 60 a 64 anos; População indígena aldeado em terras demarcadas aldeada; Povos e comunidades tradicionais ribeirinhas e quilombolas; Grupo com comorbidades*; Trabalhadores da educação; Pessoas com deficiência permanente severa; Forças de Segurança e Salvamento; Funcionários do sistema de privação de liberdade; População privada de liberdade. Além disso, estima-se que serão necessárias 104.265.535 (cento e quatro milhões, duzentos e sessenta e cinco mil, quinhentos e trinta e cinco) doses, para vacinar uma população de 49.650.255 (quarenta e nove milhões, seiscentos e cinquenta mil, duzentos e cinquenta e cinco) pessoas dos grupos de Trabalhadores da saúde, pessoas com 60 anos ou mais e o Grupo com comorbidades.
-
-Com o surgimento de novas linhagens do vírus de maior transmissibilidade, pesquisadores brasileiros já apontaram uma piora na situação epidemiológica das regiões acometidas por essas variantes. Entretanto, diferentemente do que tem sido apontado, Freitas e colaboradores sugerem uma mudança no padrão de mortalidade da doença, já que jovens entre 20-39 anos tem sido a população mais acometida com uma taxa de letalidade maior em 2,7 vezes [9].
-Assim, a ampla capacidade de mutacidade do Sars-CoV-2, bem como a mudança de foco de infecção do vírus reiteram mais do que nunca o início de ações como: maiores estudos sobre a eficácia das vacinas disponíveis no país, compartilhamento mais eficiente de dados e informações referentes à pandemia além de um maior engajamento por parte dos envolvidos na produção de conhecimento sobre o assunto no Brasil [10].
-
-Dado a quantidade reduzida de vacinas e o agravamento da doença, esse trabalho procura propor subgrupos de prioridade para imunização, considerando os fatores de risco. Além disso,  procura encontrar novos grupos de prioridade, dada a  mudança no padrão de mortalidade da doença.
+# Vídeos do Projeto
+# Vídeo da Proposta
 
 [Link para vídeo de apresentação da proposta do projeto.](https://youtu.be/59DZYWyoovo)
+
+# Vídeo da Apresentação Final
+
+[Link para vídeo de apresentação final do projeto.](https://youtu.be/PZiL9D5mvsE)
 
 # Perguntas de Pesquisa
 
 - Qual perfil da população Brasileira está mais suscetível ao óbito por meio de infecção por COVID-19?
-- O programa de vacina está priorizando os grupos identificados?
 - Quais características implicam em maior mortalidade por COVID-19?
 
 # Bases de Dados
