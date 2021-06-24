@@ -14,15 +14,17 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 
 # Descrição Resumida do Projeto
-Este projeto utiliza algoritmos de Machine Learn para tentar identificar os fatores associados à morte por a COVID-19 em comparação com mortes decorridas de outras causas.
+Este projeto utiliza algoritmos de Machine Learn para tentar identificar os fatores associados à morte por COVID-19 em comparação com mortes decorridas de outras causas.
 
-Neste trabalho foram utilizados dados anonimizados de pacientes com COVID-19 do estado do Ceará, que foram disponibilizados publicamente pela [IntegraSUS/CE](https://github.com/integrasus/api-covid-ce).
+Neste trabalho foram utilizados dados anonimizados de pacientes com COVID-19 do estado do Ceará, que foram disponibilizados publicamente pelo [IntegraSUS/CE](https://github.com/integrasus/api-covid-ce).
 
 Este dataset possui 1.873.583 de registros de pacientes do estado do Ceará acompanhados com sintomas de COVID-19. O dataset possui 43 features (colunas), sendo algumas relevantes para este trabalho, como por exemplo a relação de comorbidades do paciente. Apesar de possuir muitos registros, o dataset apresenta aproximadamente 97% de informações faltantes em relação às comorbidades e outros fatores de risco. Mais informações sobre esse dataset podem ser obtidas no [notebook de análise exploratória](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb).
 
-Além dos dados do IntegraSUS/CE foram utilizados dados demográficos dos municípios onde os pacientes residem, esses dados foram obtidos do [portal do IBGE](https://www.ibge.gov.br/cidades-e-estados/ce.html). Esse dataset possui informações demográficas, como área do município, população, renda, número de matrícula e índice de desenvolvimento Humano Municipal - IDHM. Esse dataset foi utilizado para verificar se fatores sociais podem estar associados às mortes por COVID-19.
+Além dos dados do IntegraSUS/CE foram utilizados dados demográficos dos municípios onde os pacientes residem, esses dados foram obtidos do [portal do IBGE](https://www.ibge.gov.br/cidades-e-estados/ce.html). Esse dataset possui informações demográficas, como área do município, população, renda, número de matrícula e Índice de Desenvolvimento Humano Municipal - IDHM. Esse dataset foi utilizado para verificar se fatores sociais podem estar associados às mortes por COVID-19.
 
-Os datasets utilizados neste notebook são resultados das etapas de pré-processamento: limpeza de dados e transformação de dados. Para compreender melhor como os dados foram tratados é possível acessar os notebooks de preparação dos dados [Dataset1:RandomForest](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_random_florest.ipynb) e [Dataset2:Regression COX](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_Cox.ipynb).
+Os datasets utilizados no [notebook final](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E3_Entrega_Final_(Modelos).ipynb) são resultados das etapas de pré-processamento: limpeza de dados e transformação de dados. 
+
+Para compreender melhor como os dados foram tratados é possível acessar os notebooks de preparação dos dados [Dataset1:RandomForest](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_random_florest.ipynb) e [Dataset2:Regression COX](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_Cox.ipynb).
 
 Este trabalho apresenta a aplicação de dois algoritmos de Machine Learning. O primeiro utiliza o algoritmo de florestas aleatórias (Random Forest) para classificar as mortes em decorrência de COVID-19 ou por outras causas. O Random Forest, assim como outros algoritmos baseados em árvores de decisão possibilitam o estudo de como a classificação foi realizada, de forma a compreender quais características ou fatores contribuem mais para o evento, nesse caso a morte por COVID-19.
 
@@ -67,9 +69,9 @@ Em 16/12/2020 o governo brasileiro lançou o Plano Nacional de Imunização - PN
 * doenças cardiovasculares e cerebrovasculares; 
 * hipertensão arterial grave; 
 * indivíduos transplantados de órgãos sólidos;
-*  anemia falciforme; 
-*  câncer e 
-*  obesidade mórbida (IMC≥40).
+* anemia falciforme; 
+* câncer e 
+* obesidade mórbida (IMC≥40).
 
 O PNI define 14 grupos prioritários para vacinação, sendo eles: Trabalhadores de Saúde; Pessoas de 80 anos e mais; Pessoas de 75 a 79 anos; Pessoas de 70 a 74 anos; Pessoas de 65 a 69 anos; Pessoas de 60 a 64 anos; População indígena aldeado em terras demarcadas aldeada; Povos e comunidades tradicionais ribeirinhas e quilombolas; Grupo com comorbidades*; Trabalhadores da educação; Pessoas com deficiência permanente severa; Forças de Segurança e Salvamento; Funcionários do sistema de privação de liberdade; População privada de liberdade. Além disso, estima-se que serão necessárias 104.265.535 (cento e quatro milhões, duzentos e sessenta e cinco mil, quinhentos e trinta e cinco) doses, para vacinar uma população de 49.650.255 (quarenta e nove milhões, seiscentos e cinquenta mil, duzentos e cinquenta e cinco) pessoas dos grupos de Trabalhadores da saúde, pessoas com 60 anos ou mais e o Grupo com comorbidades.
 
@@ -77,7 +79,7 @@ Com o surgimento de novas linhagens do vírus de maior transmissibilidade, pesqu
 
 # Motivação
 
-Diante do problema apresentado na seção anterior, a motivação para este trabalho consiste na identificação de fatores associados ao óbito por COVID-19 em comparação aos óbitos por outras causas, no intuito de priorizar subgrupos para imunização ou em outros cenários aplicáveis.
+Diante do problema apresentado na seção anterior, a motivação para este trabalho consiste na identificação de fatores associados ao óbito por COVID-19 em comparação aos óbitos por outras causas, no intuito de permitir a priorização de subgrupos para imunização ou em outros cenários aplicáveis.
 
 # Perguntas de Pesquisa
 
@@ -89,19 +91,19 @@ Diante do problema apresentado na seção anterior, a motivação para este trab
 O objetivo deste trabalho é estabelecer um perfil da população que seja mais suscetível à óbito por COVID-19, utilizando algoritmos de Machine Learn e dados demográficos do estado do Ceará para propor subgrupos de prioridade para imunização.
 
 # Metodologia
-Inicialmente, foram realizadas etapas de pré-processamento utilizando limpeza e transformação de dados. O estudo foi do tipo observacional com tratamento de dados utilizando algoritmos de Machine Learn como  florestas aleatórias (Random Forest) e Regression COX. 
+Inicialmente, foram realizadas etapas de pré-processamento utilizando limpeza e transformação de dados. O estudo foi do tipo observacional com tratamento de dados utilizando algoritmos de Machine Learn como florestas aleatórias (Random Forest) e Regression COX. 
 
 O Random Forest baseia-se em árvores de decisão o qual possibilita o estudo da classificação entre óbitos por COVID-19 ou por outras causas, além de compreender quais características ou fatores são mais suscetíveis ao óbito pela doença. Já o  Regression COX é um modelo de análise estatística de sobrevivência. Neste estudo foi utilizado com o objetivo de prever quais características (fatores) contribuem para o óbito por COVID-19.
 
 # Ferramentas
-A análise exploratória dos dados será realizada utilizando o notebook do Google Colab. A linguagem utilizada para processamento dos dados será o Python com as bibliotecas Pandas e NumPy. Para visualização dos dados será utilizada as bibliotecas Matplotlib e Seaborn.
+A análise exploratória dos dados foi realizada utilizando o notebook do Google Colab. A linguagem utilizada para processamento dos dados foi o Python com as bibliotecas Pandas e NumPy. Para visualização dos dados foram utilizadas as bibliotecas Matplotlib e Seaborn.
 
-A biblioteca Scikit Learn será utilizada para construção de modelos de Machine Learning. O objetivo é utilizar algoritmos supervisionados para prever os óbitos por Covid-19, dadas as características/comorbidades dos pacientes. Uma vez que o modelo esteja concluído, será extraído as características mais importantes, que levam os pacientes a óbito.
+A biblioteca Scikit Learn foi utilizada para construção de modelos de Machine Learning. O objetivo foi utilizar algoritmos supervisionados para prever os óbitos por Covid-19, dadas as características/comorbidades dos pacientes.
 
 # Base de Dados e Evolução
 
 # Bases Estudadas e Adotadas
-Para responder às perguntas de pesquisa será utilizada uma base de dados fornecida pelo Governo do Estado do Ceará. A base possui o registro dos infectados por COVID-19, apresentando suas comorbidades e o desfecho da infecção.
+Para responder às perguntas de pesquisa foi utilizada uma base de dados fornecida pelo Governo do Estado do Ceará. A base possui o registro dos infectados por COVID-19, apresentando suas comorbidades e o desfecho da infecção.
 
 | Base de Dados | Endereço na Web | Resumo descritivo |
 |---------------|-----------------|-------------------|
@@ -157,15 +159,13 @@ sexoPaciente                     |Sexo do paciente                              
 O banco de dados do IntegraSUS/CE possui muitos registros (1.873.583) de pacientes do estado do Ceará com sintomas de COVID-19, apresentando 43 features (colunas), sendo algumas relevantes para este trabalho, como por exemplo a relação de comorbidades do paciente. Porém, cerca de 97% do dataset possui informações faltantes em relação às comorbidades e outros fatores de risco.
  
 # Quais as transformações e tratamentos (e.g., dados faltantes e limpeza) feitos?
-Para pré-processamento foram realizadas limpeza e transformação de dados, utilizando dois algoritmos de machine learning: florestas aleatórias (Random Forest) e Regression COX.  Os dados foram tratados e estão disponíveis para  acesso nos links: Dataset1:RandomForest e Dataset2:Regression COX.
- 
+Para o pré-processamento foram realizadas limpeza e transformação de dados, utilizando dois algoritmos de machine learning: florestas aleatórias (Random Forest) e Regression COX.  Os dados foram tratados e estão disponíveis para  acesso nos links: [Dataset1:RandomForest](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_random_florest.ipynb) e [Dataset2:Regression COX](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_Cox.ipynb).
+
 # Apresente aqui uma Análise Exploratória (inicial) sobre esta base.
 [Notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
 
 # Integração entre Bases e Análise Exploratória
-Descreva etapas de integração de fontes de dados e apresente a seguir uma análise exploratória que envolva ambas.
-
-Na etapa de análise exploratória foram utilizados os seguintes ferramentas:
+Na etapa de análise exploratória foram utilizados as seguintes ferramentas:
 
 * Estatística descritiva e gráficos;
 * Análise correlação e gráficos de dispersão;
@@ -180,26 +180,26 @@ As análises realizadas estão dividas nas seguintes etapas:
 3. Machine Learning
 4. Conclusão
  
-Na primeira etapa (análise exploratória) foram realizadas análise de dados para conhecer os dados, verificar quais dados estavam faltantes, realizar estatísticas descritivas, desenvolvimento de gráficos com intuito de melhorar a visualização destes dados. entre outros.
+Na primeira etapa (análise exploratória) foram realizadas análises de dados para conhecer os dados, verificar quais dados estavam faltantes, realizar estatísticas descritivas, desenvolvimento de gráficos com intuito de melhorar a visualização destes dados, entre outros.
 
 Na segunda etapa (pré-processamento) foram realizadas a limpeza e transformação de dados, realizando a remoção ou imputação de dados faltantes. Também foram selecionados os features e o subconjunto de dados de interesse, além de realizar a junção dos diferentes datasets.
 
-Na terceira etapa (machine learning) foram realizadas análises de dados utilizando  dois modelos (algoritmos) de machine learning: florestas aleatórias (Random Forest) e Regression COX.
+Na terceira etapa (machine learning) foram realizadas análises de dados utilizando dois modelos (algoritmos) de machine learning: florestas aleatórias (Random Forest) e Regression COX.
 
 Na quarta etapa (conclusão) foi realizada a interpretação dos resultados.
 
 # Ferramentas
-A análise exploratória dos dados será realizada utilizando o notebook do Google Colab. A linguagem utilizada para processamento dos dados será o Python com as bibliotecas Pandas e NumPy. Para visualização dos dados será utilizada as bibliotecas Matplotlib e Seaborn. A biblioteca Scikit Learn será utilizada para construção de modelos de Machine Learning. 
+A análise exploratória dos dados foi realizada utilizando o notebook do Google Colab. A linguagem utilizada para processamento dos dados foi o Python com as bibliotecas Pandas e NumPy. Para visualização dos dados foram utilizadas as bibliotecas Matplotlib e Seaborn. A biblioteca Scikit Learn foi utilizada para construção de modelos de Machine Learning. 
 
 # Resultados
 
-O principal resultado obtido neste estudo foi de que do número total de óbitos (21.963), 96,8% foram confirmados positivos para COVID-19, em sua maioria homens (55,9%). A faixa etária que mais se contaminou possuía entre 30 e 40 anos e eram do sexo feminino. Apesar de grande parte da população do Ceará possuir entre 10 e 19 anos, a grande maioria dos óbitos acontece entre os 75 e 80 anos. Pode-se observar também que em 93,2% dos casos positivos para COVID-19 a internação não foi necessária. Demograficamente, a cidade com maior número de óbitos é Fortaleza (capital do Ceará), seguida por Caucaia (16,3 km) e Maracanaú (23,4 km).
+O principal resultado obtido neste estudo foi de que do número total de óbitos do dataset (21.963), 96,8% foram confirmados positivos para COVID-19, em sua maioria homens (55,9%). A faixa etária que mais se contaminou possuía entre 30 e 40 anos e eram do sexo feminino. Apesar de grande parte da população do Ceará possuir entre 10 e 19 anos, a grande maioria dos óbitos acontece entre os 75 e 80 anos. Pode-se observar também que em 93,2% dos casos positivos para COVID-19 a internação não foi necessária. Demograficamente, a cidade com maior número de óbitos é Fortaleza (capital do Ceará), seguida por Caucaia (16,3 km de distância da capital) e Maracanaú (23,4 km de distância da capital).
 
-Como resultados podemos observar que cerca de 45% dos óbitos pela doença no estado do Ceará foram pacientes que não possuíam comorbidade nenhuma e 31% dos pacientes possuíam pelo menos uma comorbidade. A maioria dos óbitos por COVID-19 eram de pacientes com problemas cardiovasculares e diabetes. Dados da secretaria de saúde do Distrito Federal (DF) exemplificam esse fato: dos mais de 300 mil infectados, em abril de 2021, pouco mais de 17 mil eram portadores de comorbidades, totalizando 17,2% dos casos. A grande maioria desses pacientes (56,6%) são cardiopatas, seguido de pacientes obesos (7,3%) e imunossuprimidos (5,6%). Além disso, no DF dentre os mais de 5 mil mortos pela COVID-19, 85,1% tinham outras doenças que agravaram o quadro da infecção [6]. 
+Como resultados podemos observar que cerca de 45% dos óbitos pela doença no estado do Ceará foram pacientes que não possuíam comorbidade nenhuma e 31% dos pacientes possuíam pelo menos uma comorbidade. A maioria dos óbitos por COVID-19 eram de pacientes com problemas cardiovasculares e diabetes. Dados da secretaria de saúde do Distrito Federal (DF) exemplificam esse fato: dos mais de 300 mil infectados, em abril de 2021, pouco mais de 17 mil eram portadores de comorbidades, totalizando 5,6% dos casos. A grande maioria desses pacientes (56,6%) são cardiopatas, seguido de pacientes obesos (7,3%) e imunossuprimidos (5,6%). Além disso, no DF dentre os mais de 5 mil mortos pela COVID-19, 85,1% tinham outras doenças que agravaram o quadro da infecção [6]. 
 
 O mesmo pode ser observado em estudos realizados pela Caixa de Previdência e Assistência aos Servidores da Fundação Nacional de Saúde (CAPESESP) que avaliou 600 pessoas em 2020, acometidas ou não pelo Sars-CoV-2. Esse estudo revelou que a taxa de mortalidade por COVID-19 de pessoas diabéticas é 10% maior que a taxa de mortalidade entre pessoas saudáveis, devido a vulnerabilidade do paciente diabético em lidar com o quadro infeccioso do vírus [7]. O mesmo é pontuado por Marinho e colaboradores, que apontaram a desregulação imunológica e a inflamação metabólica do paciente diabético como pontos chave capazes de reduzir a habilidade do organismo em desenvolver cura contra a doença, justificando a maior taxa de mortalidade associada à essa população [8].
 
-Além disso, pode-se perceber que a taxa de letalidade da doença para casos mais graves (onde o paciente foi pra UTI) é maior, mais de 66% dos casos evoluiu para óbito. Diferente é observado em casos mais leves, onde mais de 67% evoluem recuperados. 
+Além disso, pode-se perceber que a taxa de letalidade da doença para casos mais graves (onde o paciente foi pra UTI) é maior, mais de 66% dos casos evoluiu para óbito. Diferente do observado em casos mais leves, onde mais de 67% evoluem para recuperados. 
 
 # Discussão
 
