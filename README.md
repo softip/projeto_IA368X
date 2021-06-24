@@ -37,6 +37,10 @@ O segundo algoritmo utilizado é o Regression COX, que faz parte da família de 
 
 [Link para vídeo de apresentação final do projeto.](https://youtu.be/PZiL9D5mvsE)
 
+# Slides do Projeto Final
+
+[Slides da Apresentação](https://drive.google.com/file/d/1w8w3I-188_QzMqYMKmWJ2pcuUQfWYXaU/view?usp=sharing)
+
 # Introdução e Referenciais de Teóricos
 
 # Contextualização do projeto
