@@ -37,8 +37,10 @@ O segundo algoritmo utilizado é o Regression COX, que faz parte da família de 
 
 [Link para vídeo de apresentação final do projeto.](https://youtu.be/PZiL9D5mvsE)
 
-# Slides do Projeto Final
+# Slides do Proposta
+[Slides da Apresentação](https://drive.google.com/file/d/1UVw2a4cfNNw-17ogSW_DAaoE-lfuQ9Z-/view?usp=sharing)
 
+# Slides do Projeto Final
 [Slides da Apresentação](https://drive.google.com/file/d/1w8w3I-188_QzMqYMKmWJ2pcuUQfWYXaU/view?usp=sharing)
 
 # Introdução e Referenciais de Teóricos
@@ -168,7 +170,7 @@ Na etapa de análise exploratória foram utilizados os seguintes ferramentas:
 * Estatística descritiva e gráficos;
 * Análise correlação e gráficos de dispersão;
 
-[Os resultados de análise exploratória está descrita no notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
+[Os resultados de análise exploratória estão descritos no notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
 
 # Análises Realizadas
 As análises realizadas estão dividas nas seguintes etapas:
@@ -191,7 +193,7 @@ A análise exploratória dos dados será realizada utilizando o notebook do Goog
 
 # Resultados
 
-O principal resultado obtido neste estudo foi de que do número total de óbitos (21.963), 96,8% foram confirmados positivos para COVID-19, em sua maioria homens (55,9%). A faixa etária que mais se contaminou possuía entre 30 e 40 anos e eram do sexo feminino. Apesar de grande parte da população do Ceará possuir entre 10 e 19 anos, a grande maioria dos óbitos acontece entre os 75 e 80 anos. Pode-se observar também que em 93,2% dos casos positivos para COVID-19 a internação não foi necessária. Demograficamente, a cidade com maior número de óbitos é Fortaleza (capital do Ceará), seguida por Caucaia (16,3km) e Maracanaú (23,4km).
+O principal resultado obtido neste estudo foi de que do número total de óbitos (21.963), 96,8% foram confirmados positivos para COVID-19, em sua maioria homens (55,9%). A faixa etária que mais se contaminou possuía entre 30 e 40 anos e eram do sexo feminino. Apesar de grande parte da população do Ceará possuir entre 10 e 19 anos, a grande maioria dos óbitos acontece entre os 75 e 80 anos. Pode-se observar também que em 93,2% dos casos positivos para COVID-19 a internação não foi necessária. Demograficamente, a cidade com maior número de óbitos é Fortaleza (capital do Ceará), seguida por Caucaia (16,3 km) e Maracanaú (23,4 km).
 
 Como resultados podemos observar que cerca de 45% dos óbitos pela doença no estado do Ceará foram pacientes que não possuíam comorbidade nenhuma e 31% dos pacientes possuíam pelo menos uma comorbidade. A maioria dos óbitos por COVID-19 eram de pacientes com problemas cardiovasculares e diabetes. Dados da secretaria de saúde do Distrito Federal (DF) exemplificam esse fato: dos mais de 300 mil infectados, em abril de 2021, pouco mais de 17 mil eram portadores de comorbidades, totalizando 17,2% dos casos. A grande maioria desses pacientes (56,6%) são cardiopatas, seguido de pacientes obesos (7,3%) e imunossuprimidos (5,6%). Além disso, no DF dentre os mais de 5 mil mortos pela COVID-19, 85,1% tinham outras doenças que agravaram o quadro da infecção [6]. 
 
@@ -201,7 +203,15 @@ Além disso, pode-se perceber que a taxa de letalidade da doença para casos mai
 
 # Discussão
 
+Concluiu-se que algumas comorbidades, como obesidade, doenças  cardiovasculares e diabetes, podem estar correlacionadas positivamente com a letalidade da COVID-19. Além disso, percebeu-se também que formas diferentes de tratamento dos mesmos dados podem influenciar consideravelmente os resultados obtidos por meio deles.
+
 # Trabalhos Futuros
+
+O que poderia ser melhorado se houvesse mais tempo?
+
+* Obtenção de mais informações de outros bancos de dados abrangendo mais regiões.
+* Testar outras formas de tratamentos de dados para investigar as alterações obtidas nos resultados
+
 
 # Referências Bibliográficas
 
