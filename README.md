@@ -167,17 +167,36 @@ Para o pré-processamento foram realizadas limpeza e transformação de dados, u
 
 O conjunto de dados do IntegraSUS, utilizado neste trabalho, possui muitos dados faltantes, principalmente os dados relacionados as comorbidades que são de interesse de estudo. Cerca de 99% dos dados faltantes estavam relacionados as comorbidades, uma hipótese para a falta de dados relacionados as comorbidades é de que essas informações são coletadas apenas quando o paciente é internado ou busca por atendimento em uma unidade de saúde. A figura abaixo apresenta que a maior parte dos dados faltantes são de pessoas que não foram internadas.
 
-![alt text](https://drive.google.com/file/d/10udjg-HMVEZ6zqDEw_yGHRtWbdX8nC3q/view?usp=sharing)
+![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico1.png)
 
 O número total de óbitos do dataset (21.963), 96,8% foram confirmados positivos para COVID-19, em sua maioria homens (55,9%). A faixa etária que mais se contaminou possuía entre 30 e 40 anos e eram do sexo feminino. Apesar de grande parte da população do Ceará possuir entre 10 e 19 anos, a grande maioria dos óbitos acontece entre os 75 e 80 anos. Pode-se observar também que em 93,2% dos casos positivos para COVID-19 a internação não foi necessária. Demograficamente, a cidade com maior número de óbitos é Fortaleza (capital do Ceará), seguida por Caucaia (16,3 km de distância da capital) e Maracanaú (23,4 km de distância da capital), conforme pode ser visto na figura abaixo:
 
-![alt text](https://drive.google.com/file/d/10udjg-HMVEZ6zqDEw_yGHRtWbdX8nC3q/view?usp=sharing)
+![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico2.png)
 
-Como resultados podemos observar que cerca de 45% dos óbitos pela doença no estado do Ceará foram pacientes que não possuíam comorbidade nenhuma e 31% dos pacientes possuíam pelo menos uma comorbidade. A maioria dos óbitos por COVID-19 eram de pacientes com problemas cardiovasculares e diabetes. Dados da secretaria de saúde do Distrito Federal (DF) exemplificam esse fato: dos mais de 300 mil infectados, em abril de 2021, pouco mais de 17 mil eram portadores de comorbidades, totalizando 5,6% dos casos. A grande maioria desses pacientes (56,6%) são cardiopatas, seguido de pacientes obesos (7,3%) e imunossuprimidos (5,6%). Além disso, no DF dentre os mais de 5 mil mortos pela COVID-19, 85,1% tinham outras doenças que agravaram o quadro da infecção [6]. 
+Como resultados podemos observar que cerca de 45% dos óbitos pela doença no estado do Ceará foram pacientes que não possuíam comorbidade nenhuma e 31% dos pacientes possuíam pelo menos uma comorbidade. 
+
+![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico3.png)
+
+A maioria dos óbitos por COVID-19 eram de pacientes com problemas cardiovasculares e diabetes. Dados da secretaria de saúde do Distrito Federal (DF) exemplificam esse fato: dos mais de 300 mil infectados, em abril de 2021, pouco mais de 17 mil eram portadores de comorbidades, totalizando 5,6% dos casos. A grande maioria desses pacientes (56,6%) são cardiopatas, seguido de pacientes obesos (7,3%) e imunossuprimidos (5,6%). Além disso, no DF dentre os mais de 5 mil mortos pela COVID-19, 85,1% tinham outras doenças que agravaram o quadro da infecção [6]. 
+
+![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico4.png)
 
 O mesmo pode ser observado em estudos realizados pela Caixa de Previdência e Assistência aos Servidores da Fundação Nacional de Saúde (CAPESESP) que avaliou 600 pessoas em 2020, acometidas ou não pelo Sars-CoV-2. Esse estudo revelou que a taxa de mortalidade por COVID-19 de pessoas diabéticas é 10% maior que a taxa de mortalidade entre pessoas saudáveis, devido a vulnerabilidade do paciente diabético em lidar com o quadro infeccioso do vírus [7]. O mesmo é pontuado por Marinho e colaboradores, que apontaram a desregulação imunológica e a inflamação metabólica do paciente diabético como pontos chave capazes de reduzir a habilidade do organismo em desenvolver cura contra a doença, justificando a maior taxa de mortalidade associada à essa população [8].
 
+O número de mortes também é maior entre os homens, cerca de 55% dos óbitos e internações são relacionadas ao gênero masculino.
+
+![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico8.png)
+
+No que tange aos óbitos por raça/cor, observa-se que 83.4% dos óbitos estão relacionados as declarados como Pardos, 13% relacionados aos Branco 2% relacionados aos declarados Preto. De acordo, o IPECE, cem 2019, 65,5% da população ceraense se declaram como pardos, 34,3% como brancos e 3,1% como negros. Observa-se que o número de mortos é maior entre pardos e negros.
+
+![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico9.png)
+
 Além disso, pode-se perceber que a taxa de letalidade da doença para casos mais graves (onde o paciente foi pra UTI) é maior, mais de 66% dos casos evoluiu para óbito. Diferente do observado em casos mais leves, onde mais de 67% evoluem para recuperados. 
+
+![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico8.png)
+
+
+
 
 # Integração entre Bases e Análise Exploratória
 Na etapa de análise exploratória foram utilizados as seguintes ferramentas:
@@ -235,3 +254,5 @@ O que poderia ser melhorado se houvesse mais tempo?
 9. Ricardo A, Freitas R, Beckedorff OA, Góes LP De, Siqueira AM, Castro DB De, Fernandes C, Rocha D, Lemos Q, Barros ENC (2021) A emergência da nova variante P.1 do SARS-CoV-2 no Amazonas (Brasil) foi temporalmente associada a uma mudança no perfil da mortalidade devido a COVID-19, segundo sexo e idade. https://doi.org/https://doi.org/10.1590/SciELOPreprints.2030
 10.	Maria F, Marquitti D, Coutinho RM, et al (2021) Carta à Comunidade Científica : o Brasil frente às novas variantes de SARSCoV- 2. 
 11.	Brasil. Ministério da Saúde. Secretaria de Ciência, Tecnologia e Insumos Estratégicos. Departamento de Ciência e Tecnologia. (2014) Diretrizes Metodológicas: elaboração de revisão sistemática e metanálise de estudos observacionais comparativos sobre fatores de riscos e prognósticos. Brasília: Ministério da Saúde, 2014. 132 p.
+12.	https://www.ipece.ce.gov.br/2020/12/22/cresce-numero-de-pessoas-que-se-declararam-de-cor-preta-enquanto-brancos-e-pardos-caem-no-ceara-em-2019-com-relacao-a-2013/
+
