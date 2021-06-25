@@ -82,20 +82,21 @@ O objetivo deste trabalho é estabelecer um perfil da população que seja mais 
 # Metodologia
 O estudo foi do tipo observacional e empregando processo de KDD, que  é composto por cinco fases, sendo elas: seleção de dados, pré-processamento, transformação, mineração e interpretação/avaliação.  
 
-Na primeira etapa, após definir as perguntas de pesquisa, foi realizada a busca por fontes de dados que pudessem ser utilizadas para fornecer as respostas desejadas. Após realizar a seleção dos dados foi realizada a análise exploratória dos dados para conhecer os dados, tentar identificar padrões e encontrar insights. Além disso, foi realizada as estatísticas descritivas, o desenvolvimento de gráficos com intuito de melhorar a visualização destes dados e foi verificado quais dados estavam faltantes.
+Na primeira etapa, após definir as perguntas de pesquisa, foi realizada a busca por fontes de dados que pudessem ser utilizadas para fornecer as respostas desejadas. Após realizar a seleção dos dados foi realizada uma análise exploratória destes para melhor conhecê-los, tentando identificar padrões e encontrar insights. Além disso, foram realizadas as estatísticas descritivas, o desenvolvimento de gráficos com intuito de melhorar a visualização destes dados e foram verificados quais dados estavam faltantes.
+
 Na segunda etapa (pré-processamento) foi realizada a remoção ou imputação de dados faltantes. Os tipos dos campos foram alterados conforme o domínio do dado e registros duplicados foram excluídos. 
 
-Na terceira etapa (transformação) o conjunto de dados do IntegraSUS foi fundido com o conjunto de dados do IBGE, foi criada uma nova coluna "tempo de vida" utilizada na regressão de COX. Essa nova feature foi obtida subtraindo a data de início dos sintomas (início da observação) da data de morte do paciente (término da observação). Para os pacientes que não faleceram, a data da extração do conjunto de dados no GitHub do IntegraSUS,  foi utilizada como a data do término da observação. 
+Na terceira etapa (transformação) o conjunto de dados do IntegraSUS foi fundido com o conjunto de dados do IBGE, foi criada uma nova coluna "tempo de vida" utilizada na regressão de COX. Essa nova feature foi obtida subtraindo a data de início dos sintomas (início da observação) da data de morte do paciente (término da observação). Para os pacientes que não faleceram, a data da extração do conjunto de dados no GitHub do IntegraSUS, foi utilizada como a data do término da observação. 
 
-Por fim, as features categorias foram transformadas em dummies. Um dummies é uma feature que representa se uma caracteristica está presente ou não, por exemplo, a coluna sexo pode possuir dois valores "Masculino" e "Feminino", quando a coluna é transformada em dummies são criadas duas colunas com os titulos "Masculino" e "Feminino". Se um paciente é do sexo masculino, então a coluna "Masculino" vai receber o valor 1,  representando sim, e a coluna "Feminino" vai receber o valor 0, representando "Não". Esse processo é necessário para o correto funcionamento de alguns algoritmos de aprendizagem de máquina, como é o caso da regressão COX. Após as transformações um conjunto de features de interesses foi selecionada e dois novos conjuntos de dados foram criados para serem utilizados na próxima etapa do KDD.
+Por fim, as features categorias foram transformadas em dummies. Um dummies é uma feature que representa se uma característica está presente ou não, por exemplo, a coluna sexo pode possuir dois valores "Masculino" e "Feminino", quando a coluna é transformada em dummies são criadas duas colunas com os titulos "Masculino" e "Feminino". Se um paciente é do sexo masculino, então a coluna "Masculino" vai receber o valor 1,  representando sim, e a coluna "Feminino" vai receber o valor 0, representando "Não". Esse processo é necessário para o correto funcionamento de alguns algoritmos de aprendizagem de máquina, como é o caso da regressão COX. Após as transformações, um conjunto de features de interesses foi selecionada e dois novos conjuntos de dados foram criados para serem utilizados na próxima etapa do KDD.
 
 Mais informações sobre o pré-processamento e a transformação dos dados realizadas podem ser encontradas no links: [Dataset1:RandomForest](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_random_florest.ipynb) e [Dataset2:Regression COX](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_Cox.ipynb).
 
-Na quarta etapa foi realizada a mineração de dados. Nesta etapa foram criados dois modelos, um de classificação utilizando o algoritmo de florestas aleatórias (Random Forest) e um de regressão utilizando o algoritmo  Regression COX.
+Na quarta etapa foi realizada a mineração de dados. Nesta etapa foram criados dois modelos, um de classificação utilizando o algoritmo de florestas aleatórias (Random Forest) e um de regressão utilizando o algoritmo Regression COX.
 
 O Random Forest é um algoritmo de aprendizagem de máquina utilizado para realizar classificação e regressão. O algoritmo cria diversas árvores de decisão, escolhendo aleatoriamente as features que serão utilizadas em cada árvore. O resultado da classificação é realizado considerando os votos de cada árvore da floresta na predição realizada.
 
-A Regressão de COX, que é uma análise de sobrevivência. A análise de sobrevivência é um conjunto de abordagens estatísticas usadas para descobrir o tempo que um evento de interesse (geralmente chamado de morte) leva para ocorrer leva. Essa abordagem é frequentemente utilizada em dados de saúde, para prever fatores associados à morte e tratamento com maior probabilidade de sobrevivência.
+A Regressão de COX é uma análise de sobrevivência que consiste em um conjunto de abordagens estatísticas usadas para descobrir o tempo que um evento de interesse (geralmente chamado de morte) leva para ocorrer. Essa abordagem é frequentemente utilizada em dados de saúde, para prever fatores associados à morte e tratamento com maior probabilidade de sobrevivência.
 
 
 ## Ferramentas
@@ -104,11 +105,11 @@ A análise exploratória dos dados foi realizada utilizando o notebook do Google
 A biblioteca Scikit Learn foi utilizada para construção de modelos de Machine Learning. O objetivo foi utilizar algoritmos supervisionados para prever os óbitos por Covid-19, dadas as características/comorbidades dos pacientes.
 
 ## Bases Estudadas e Adotadas
-Para responder às perguntas de pesquisa foi utilizada uma base de dados fornecida pelo Governo do Estado do Ceará. A base possui o registro dos infectados por COVID-19, apresentando suas comorbidades e o desfecho da infecção.
+Para responder às perguntas de pesquisa foram utilizadas duas bases de dados.
 
 | Base de Dados | Endereço na Web | Resumo descritivo |
 |---------------|-----------------|-------------------|
-| api-covid-ce  | [api-covid-ce](https://github.com/integrasus/api-covid-ce) | Este repositório trata da disponibilização da API pública do IntegraSUS sobre dados relacionados ao boletim epidemiológico covid-19 do estado do Ceará.|
+| api-covid-ce  | [api-covid-ce](https://github.com/integrasus/api-covid-ce) | Este repositório trata da disponibilização da API pública do IntegraSUS sobre dados relacionados ao boletim epidemiológico covid-19 do estado do Ceará.  A base possui o registro dos infectados por COVID-19, apresentando suas comorbidades e o desfecho da infecção.|
 |   IBGE-CE     | [IBGE-CE](https://www.ibge.gov.br/cidades-e-estados/ce.html) | API pública do IBGE com dados populacionais do estado do Ceará.|
 
 O banco de dados do IntegraSUS/CE possui muitos registros (1.873.583) de pacientes do estado do Ceará com sintomas de COVID-19, apresentando 43 features (colunas), sendo algumas relevantes para este trabalho, como por exemplo a relação de comorbidades do paciente. Porém, cerca de 97% do dataset possui informações faltantes em relação às comorbidades e outros fatores de risco.
@@ -162,15 +163,15 @@ sexoPaciente                     |Sexo do paciente                              
 
 # Análise Exploratória de Dados.
 
-O conjunto de dados do IntegraSUS, utilizado neste trabalho, possui muitos dados faltantes, principalmente os dados relacionados as comorbidades que são de interesse de estudo. Cerca de 99% dos dados faltantes estavam relacionados as comorbidades, uma hipótese para a falta de dados relacionados as comorbidades é de que essas informações são coletadas apenas quando o paciente é internado ou busca por atendimento em uma unidade de saúde. A figura abaixo apresenta que a maior parte dos dados faltantes são de pessoas que não foram internadas.
+O conjunto de dados do IntegraSUS, utilizado neste trabalho, possui muitos dados faltantes, principalmente os dados relacionados às comorbidades que são de interesse de estudo. Cerca de 99% dos dados faltantes estavam relacionados às comorbidades, uma hipótese para a falta de dados relacionados às comorbidades é de que essas informações são coletadas apenas quando o paciente é internado ou busca por atendimento em uma unidade de saúde. A figura abaixo apresenta que a maior parte dos dados faltantes são de pessoas que não foram internadas.
 
 ![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico1.png)
 
-O número total de óbitos do dataset (21.963), 96,8% foram confirmados positivos para COVID-19, em sua maioria homens (55,9%). A faixa etária que mais se contaminou possuía entre 30 e 40 anos e eram do sexo feminino. Apesar de grande parte da população do Ceará possuir entre 10 e 19 anos, a grande maioria dos óbitos acontece entre os 75 e 80 anos. Pode-se observar também que em 93,2% dos casos positivos para COVID-19 a internação não foi necessária. Demograficamente, a cidade com maior número de óbitos é Fortaleza (capital do Ceará), seguida por Caucaia (16,3 km de distância da capital) e Maracanaú (23,4 km de distância da capital), conforme pode ser visto na figura abaixo:
+Do número total de óbitos do dataset (21.963), 96,8% foram confirmados positivos para COVID-19, em sua maioria homens (55,9%). A faixa etária que mais se contaminou possuía entre 30 e 40 anos e eram do sexo feminino. Apesar de grande parte da população do Ceará possuir entre 10 e 19 anos, a grande maioria dos óbitos acontece entre os 75 e 80 anos. Pode-se observar também que, em 93,2% dos casos positivos para COVID-19, a internação não foi necessária. Demograficamente, a cidade com maior número de óbitos é Fortaleza (capital do Ceará), seguida por Caucaia (16,3 km de distância da capital) e Maracanaú (23,4 km de distância da capital), conforme pode ser visto na figura abaixo:
 
 ![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico2.png)
 
-Como resultados podemos observar que cerca de 45% dos óbitos pela doença no estado do Ceará foram pacientes que não possuíam comorbidade nenhuma e 31% dos pacientes possuíam pelo menos uma comorbidade. 
+Como resultados podemos observar que cerca de 45% dos óbitos pela doença no estado do Ceará foram pacientes que não possuíam comorbidade alguma e 31% dos pacientes possuíam pelo menos uma comorbidade. 
 
 ![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico3.png)
 
