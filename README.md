@@ -33,7 +33,7 @@ O segundo algoritmo utilizado é o Regression COX, que faz parte da família de 
 # Vídeos do Projeto
 | Vídeo da Proposta   |Vídeo da Apresentação Final | Slides do Proposta | Slides do Projeto Final  |
 |---------------------|---------------------|---------------------|---------------------|
-|[Link para vídeo.](https://youtu.be/59DZYWyoovo) | [Link para vídeo de apresentação.](https://youtu.be/PZiL9D5mvsE) | [Slides da Apresentação](https://drive.google.com/file/d/1UVw2a4cfNNw-17ogSW_DAaoE-lfuQ9Z-/view?usp=sharing) | [Slides da Apresentação](https://drive.google.com/file/d/1w8w3I-188_QzMqYMKmWJ2pcuUQfWYXaU/view?usp=sharing) |
+|[Link para vídeo da proposta.](https://youtu.be/59DZYWyoovo) | [Link para vídeo da apresentação final.](https://youtu.be/PZiL9D5mvsE) | [Slides da Apresentação](https://drive.google.com/file/d/1UVw2a4cfNNw-17ogSW_DAaoE-lfuQ9Z-/view?usp=sharing) | [Slides da Apresentação](https://drive.google.com/file/d/1w8w3I-188_QzMqYMKmWJ2pcuUQfWYXaU/view?usp=sharing) |
 
 
 # Introdução e Referenciais de Teóricos
@@ -161,7 +161,6 @@ sexoPaciente                     |Sexo do paciente                              
 
 
 # Análise Exploratória de Dados.
-[Notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
 
 O conjunto de dados do IntegraSUS, utilizado neste trabalho, possui muitos dados faltantes, principalmente os dados relacionados as comorbidades que são de interesse de estudo. Cerca de 99% dos dados faltantes estavam relacionados as comorbidades, uma hipótese para a falta de dados relacionados as comorbidades é de que essas informações são coletadas apenas quando o paciente é internado ou busca por atendimento em uma unidade de saúde. A figura abaixo apresenta que a maior parte dos dados faltantes são de pessoas que não foram internadas.
 
@@ -193,8 +192,8 @@ Além disso, pode-se perceber que a taxa de letalidade da doença para casos mai
 
 ![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico8.png)
 
-Mais informações sobre as análise exploratória realizada pode ser acessado no noteboo:
-[Os resultados de análise exploratória estão descritos no notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
+Mais informações sobre as análise exploratória realizada pode ser acessado no :
+[notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
 
 
 # Resultados
