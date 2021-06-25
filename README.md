@@ -220,6 +220,10 @@ Na segunda etapa (pré-processamento) foram realizadas a limpeza e transformaç�
 
 Na terceira etapa (machine learning) foram realizadas análises de dados utilizando dois modelos (algoritmos) de machine learning: florestas aleatórias (Random Forest) e Regression COX.
 
+O Random Forest é um algoritmo de aprendizagem de máquina utilizado para realizar classificação e regressão. O algoritmo cria diversas árvores de decisão, escolhendo aleatoriamente as features que serão utilizadas em cada árvore. O resultado da classificação é realizado considerando os votos de cada árvore da floresta na predição realizada.
+
+O segundo modelo utilizado foi a Regressão de COX, que é uma análise de sobrevivência. A análise de sobrevivência é um conjunto de abordagens estatísticas usadas para descobrir o tempo que um evento de interesse (geralmente chamado de morte) leva para ocorrer leva. Essa abordagem é frequentemente utilizada em dados de saúde, para prever fatores associados à morte e tratamento com maior probabilidade de sobrevivência.
+
 Na quarta etapa (conclusão) foi realizada a interpretação dos resultados.
 
 # Ferramentas
@@ -227,7 +231,27 @@ A análise exploratória dos dados foi realizada utilizando o notebook do Google
 
 # Resultados
 
+O algoritmo random forest foi utilizado para prever se o óbito de um paciente foi devido a Covid ou se teve outras causas, ao  final da simulação foi verificado quais características estavam mais associadas às mortes por Covid.
 
+O modelo de floresta aleatória apresentou acurácia de 87.4% e sensibilidade para detectar as mortes causadas por Covid de 96.2%. No entanto, o modelo apresentou uma especificidade muito baixa, ou seja, ele possui baixa capacidade de prever os casos negativos. Esse problema pode ter ocorrido devido a quantidade menor e desproporcional de registros de mortes devido a outras causas. Além disso, os fatores associados à morte por Covid também têm influenciado mortes por outras causas, o que faz o modelo possuir uma baixa especificidade.
+
+O modelo de florestas aleatórias apresentou que os fatores mais associados à morte devido a Covid são: a idade, raça/cor, o sexo, e as comorbidades cardiovasculares e diabetes, como mostrado na figura abaixo. Essas características são as mesmas já observadas na análise exploratória.
+
+![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico6.png)
+
+A regressão de COX foi utilizada para prever como diversas características colaboram para a redução do tempo de vida de um paciente infectado por Covid, ou seja, como essas características estão associadas à morte por Covid. Para interpretar o resultado da correlação de COX é necessário interpretar o Hazard Ratio (exp(coef)), ou a razão de risco, onde:
+
+*HR = 1: Sem efeito
+*HR < 1: Redução do risco de morte
+*HR > 1: Aumento do risco de morte
+
+Além disso, de avaliar a razão de risco (HR) faz-se necessário avaliar também a probabilidade do evento ser ao acaso (p-value). Após executar a regressão de COX e considerando um p-value < 0.05, verificamos que o fator idade entre 0 e 59 anos, a escolaridade e as puérpera possuem maior chances de sobrevivência, enquanto a idade maior que 60 anos, e as comorbidades de obesidade, neurológicas, renais e diabetes contribuem para o aumento das chances de morte. A figura abaixo apresenta como os fatores estão associados às chances de morte e sobrevivência devido a Covid. 
+
+![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico7.png)
+
+Entre as comorbidades a obesidade é a que oferece maior risco de morte, aumentando as chances em 48%, seguidas das comorbidades neurológica com 20%, renal 17% e diabetes 7%. Verifica-se aqui que o fator cardiovascular apresentou uma pequena razão de risco e não foi considerado, pois seu p-valor foi de 0.34, essa informação é diferente do que foi observada na análise exploratória, onde o fator cardiovascular era maior entre todas as outras comorbidades presentes nas vítimas de Covid. 
+
+Um fato interessante é que o fator escolarização entre 6 a 14 anos apresentou uma redução das chances de morte devido a covid de 6%.
 
 # Discussão
 
