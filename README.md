@@ -31,19 +31,10 @@ O primeiro notebook utiliza o algoritmo de florestas aleatórias (Random Forest)
 O segundo algoritmo utilizado é o Regression COX, que faz parte da família de algoritmos de análise de sobrevivência. O modelo criado tem o objetivo de prever quais características (fatores) contribuem para a morte devido a COVID-19.
 
 # Vídeos do Projeto
-## Vídeo da Proposta
+| Vídeo da Proposta   | Vídeo da Apresentação Final | Slides do Proposta | Slides do Projeto Final  |
+|---------------------|-----------------------------|--------------------|--------------------------|
+|[Link para vídeo de apresentação da proposta do projeto.](https://youtu.be/59DZYWyoovo) | [Link para vídeo de apresentação final do projeto.](https://youtu.be/PZiL9D5mvsE) | [Slides da Apresentação](https://drive.google.com/file/d/1UVw2a4cfNNw-17ogSW_DAaoE-lfuQ9Z-/view?usp=sharing) | [Slides da Apresentação](https://drive.google.com/file/d/1w8w3I-188_QzMqYMKmWJ2pcuUQfWYXaU/view?usp=sharing) |
 
-[Link para vídeo de apresentação da proposta do projeto.](https://youtu.be/59DZYWyoovo)
-
-## Vídeo da Apresentação Final
-
-[Link para vídeo de apresentação final do projeto.](https://youtu.be/PZiL9D5mvsE)
-
-## Slides do Proposta
-[Slides da Apresentação](https://drive.google.com/file/d/1UVw2a4cfNNw-17ogSW_DAaoE-lfuQ9Z-/view?usp=sharing)
-
-## Slides do Projeto Final
-[Slides da Apresentação](https://drive.google.com/file/d/1w8w3I-188_QzMqYMKmWJ2pcuUQfWYXaU/view?usp=sharing)
 
 # Introdução e Referenciais de Teóricos
 
@@ -98,6 +89,8 @@ Na terceira etapa (transformação) o conjunto de dados do IntegraSUS foi fundid
 
 Por fim, as features categorias foram transformadas em dummies. Um dummies é uma feature que representa se uma caracteristica está presente ou não, por exemplo, a coluna sexo pode possuir dois valores "Masculino" e "Feminino", quando a coluna é transformada em dummies são criadas duas colunas com os titulos "Masculino" e "Feminino". Se um paciente é do sexo masculino, então a coluna "Masculino" vai receber o valor 1,  representando sim, e a coluna "Feminino" vai receber o valor 0, representando "Não". Esse processo é necessário para o correto funcionamento de alguns algoritmos de aprendizagem de máquina, como é o caso da regressão COX. Após as transformações um conjunto de features de interesses foi selecionada e dois novos conjuntos de dados foram criados para serem utilizados na próxima etapa do KDD.
 
+Mais informações sobre o pré-processamento e a transformação dos dados realizadas podem ser encontradas no links: [Dataset1:RandomForest](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_random_florest.ipynb) e [Dataset2:Regression COX](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_Cox.ipynb).
+
 Na quarta etapa foi realizada a mineração de dados. Nesta etapa foram criados dois modelos, um de classificação utilizando o algoritmo de florestas aleatórias (Random Forest) e um de regressão utilizando o algoritmo  Regression COX.
 
 O Random Forest é um algoritmo de aprendizagem de máquina utilizado para realizar classificação e regressão. O algoritmo cria diversas árvores de decisão, escolhendo aleatoriamente as features que serão utilizadas em cada árvore. O resultado da classificação é realizado considerando os votos de cada árvore da floresta na predição realizada.
@@ -117,6 +110,8 @@ Para responder às perguntas de pesquisa foi utilizada uma base de dados forneci
 |---------------|-----------------|-------------------|
 | api-covid-ce  | [api-covid-ce](https://github.com/integrasus/api-covid-ce) | Este repositório trata da disponibilização da API pública do IntegraSUS sobre dados relacionados ao boletim epidemiológico covid-19 do estado do Ceará.|
 |   IBGE-CE     | [IBGE-CE](https://www.ibge.gov.br/cidades-e-estados/ce.html) | API pública do IBGE com dados populacionais do estado do Ceará.|
+
+O banco de dados do IntegraSUS/CE possui muitos registros (1.873.583) de pacientes do estado do Ceará com sintomas de COVID-19, apresentando 43 features (colunas), sendo algumas relevantes para este trabalho, como por exemplo a relação de comorbidades do paciente. Porém, cerca de 97% do dataset possui informações faltantes em relação às comorbidades e outros fatores de risco.
 
 # Dicionário de dados
 
@@ -164,11 +159,6 @@ paisPaciente                     |País de residência do paciente              
 resultadoFinalExame              |Resultado do exame final                             |Categórico
 sexoPaciente                     |Sexo do paciente                                     |Categórico
 
-# O que descobriu sobre esse banco?
-O banco de dados do IntegraSUS/CE possui muitos registros (1.873.583) de pacientes do estado do Ceará com sintomas de COVID-19, apresentando 43 features (colunas), sendo algumas relevantes para este trabalho, como por exemplo a relação de comorbidades do paciente. Porém, cerca de 97% do dataset possui informações faltantes em relação às comorbidades e outros fatores de risco.
- 
-# Quais as transformações e tratamentos (e.g., dados faltantes e limpeza) feitos?
-Para o pré-processamento foram realizadas limpeza e transformação de dados, utilizando dois algoritmos de machine learning: florestas aleatórias (Random Forest) e Regression COX.  Os dados foram tratados e estão disponíveis para  acesso nos links: [Dataset1:RandomForest](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_random_florest.ipynb) e [Dataset2:Regression COX](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_Cox.ipynb).
 
 # Análise Exploratória de Dados.
 [Notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
