@@ -31,23 +31,21 @@ O primeiro notebook utiliza o algoritmo de florestas aleatórias (Random Forest)
 O segundo algoritmo utilizado é o Regression COX, que faz parte da família de algoritmos de análise de sobrevivência. O modelo criado tem o objetivo de prever quais características (fatores) contribuem para a morte devido a COVID-19.
 
 # Vídeos do Projeto
-# Vídeo da Proposta
+## Vídeo da Proposta
 
 [Link para vídeo de apresentação da proposta do projeto.](https://youtu.be/59DZYWyoovo)
 
-# Vídeo da Apresentação Final
+## Vídeo da Apresentação Final
 
 [Link para vídeo de apresentação final do projeto.](https://youtu.be/PZiL9D5mvsE)
 
-# Slides do Proposta
+## Slides do Proposta
 [Slides da Apresentação](https://drive.google.com/file/d/1UVw2a4cfNNw-17ogSW_DAaoE-lfuQ9Z-/view?usp=sharing)
 
-# Slides do Projeto Final
+## Slides do Projeto Final
 [Slides da Apresentação](https://drive.google.com/file/d/1w8w3I-188_QzMqYMKmWJ2pcuUQfWYXaU/view?usp=sharing)
 
 # Introdução e Referenciais de Teóricos
-
-# Contextualização do projeto
 
 O novo coronavírus (SARS-CoV-2), vírus causador da doença COVID-19, foi identificado pela primeira vez na cidade de Wuhan, localizada na China, em dezembro de 2019 [1]. Rapidamente, o vírus se disseminou mundialmente, o que levou a Organização Mundial de Saúde (OMS) a declarar que a epidemia da COVID-19 constituía uma Emergência de Saúde Pública de Importância Internacional, em 30 de janeiro de 2020 e, em 11 de março de 2020, uma pandemia [1, 2].
 
@@ -91,16 +89,26 @@ Diante do problema apresentado na seção anterior, a motivação para este trab
 O objetivo deste trabalho é estabelecer um perfil da população que seja mais suscetível à óbito por COVID-19, utilizando algoritmos de Machine Learn e dados demográficos do estado do Ceará para propor subgrupos de prioridade para imunização.
 
 # Metodologia
-Inicialmente, foram realizadas etapas de pré-processamento utilizando limpeza e transformação de dados. O estudo foi do tipo observacional com tratamento de dados utilizando algoritmos de Machine Learn como florestas aleatórias (Random Forest) e Regression COX. 
+O estudo foi do tipo observacional e empregando processo de KDD, que  é composto por cinco fases, sendo elas: seleção de dados, pré-processamento, transformação, mineração e interpretação/avaliação.  
 
-O Random Forest baseia-se em árvores de decisão o qual possibilita o estudo da classificação entre óbitos por COVID-19 ou por outras causas, além de compreender quais características ou fatores são mais suscetíveis ao óbito pela doença. Já o  Regression COX é um modelo de análise estatística de sobrevivência. Neste estudo foi utilizado com o objetivo de prever quais características (fatores) contribuem para o óbito por COVID-19.
+Na primeira etapa, após definir as perguntas de pesquisa, foi realizada a busca por fontes de dados que pudessem ser utilizadas para fornecer as respostas desejadas. Após realizar a seleção dos dados foi realizada a análise exploratória dos dados para conhecer os dados, tentar identificar padrões e encontrar insights. Além disso, foi realizada as estatísticas descritivas, o desenvolvimento de gráficos com intuito de melhorar a visualização destes dados e foi verificado quais dados estavam faltantes.
+Na segunda etapa (pré-processamento) foi realizada a remoção ou imputação de dados faltantes. Os tipos dos campos foram alterados conforme o domínio do dado e registros duplicados foram excluídos. 
+
+Na terceira etapa (transformação) o conjunto de dados do IntegraSUS foi fundido com o conjunto de dados do IBGE, foi criada uma nova coluna "tempo de vida" utilizada na regressão de COX. Essa nova feature foi obtida subtraindo a data de início dos sintomas (início da observação) da data de morte do paciente (término da observação). Para os pacientes que não faleceram, a data da extração do conjunto de dados no GitHub do IntegraSUS,  foi utilizada como a data do término da observação. 
+
+Por fim, as features categorias foram transformadas em dummies. Um dummies é uma feature que representa se uma caracteristica está presente ou não, por exemplo, a coluna sexo pode possuir dois valores "Masculino" e "Feminino", quando a coluna é transformada em dummies são criadas duas colunas com os titulos "Masculino" e "Feminino". Se um paciente é do sexo masculino, então a coluna "Masculino" vai receber o valor 1,  representando sim, e a coluna "Feminino" vai receber o valor 0, representando "Não". Esse processo é necessário para o correto funcionamento de alguns algoritmos de aprendizagem de máquina, como é o caso da regressão COX. Após as transformações um conjunto de features de interesses foi selecionada e dois novos conjuntos de dados foram criados para serem utilizados na próxima etapa do KDD.
+
+Na quarta etapa foi realizada a mineração de dados. Nesta etapa foram criados dois modelos, um de classificação utilizando o algoritmo de florestas aleatórias (Random Forest) e um de regressão utilizando o algoritmo  Regression COX.
+
+O Random Forest é um algoritmo de aprendizagem de máquina utilizado para realizar classificação e regressão. O algoritmo cria diversas árvores de decisão, escolhendo aleatoriamente as features que serão utilizadas em cada árvore. O resultado da classificação é realizado considerando os votos de cada árvore da floresta na predição realizada.
+
+A Regressão de COX, que é uma análise de sobrevivência. A análise de sobrevivência é um conjunto de abordagens estatísticas usadas para descobrir o tempo que um evento de interesse (geralmente chamado de morte) leva para ocorrer leva. Essa abordagem é frequentemente utilizada em dados de saúde, para prever fatores associados à morte e tratamento com maior probabilidade de sobrevivência.
+
 
 # Ferramentas
 A análise exploratória dos dados foi realizada utilizando o notebook do Google Colab. A linguagem utilizada para processamento dos dados foi o Python com as bibliotecas Pandas e NumPy. Para visualização dos dados foram utilizadas as bibliotecas Matplotlib e Seaborn.
 
 A biblioteca Scikit Learn foi utilizada para construção de modelos de Machine Learning. O objetivo foi utilizar algoritmos supervisionados para prever os óbitos por Covid-19, dadas as características/comorbidades dos pacientes.
-
-# Base de Dados e Evolução
 
 # Bases Estudadas e Adotadas
 Para responder às perguntas de pesquisa foi utilizada uma base de dados fornecida pelo Governo do Estado do Ceará. A base possui o registro dos infectados por COVID-19, apresentando suas comorbidades e o desfecho da infecção.
@@ -110,7 +118,7 @@ Para responder às perguntas de pesquisa foi utilizada uma base de dados forneci
 | api-covid-ce  | [api-covid-ce](https://github.com/integrasus/api-covid-ce) | Este repositório trata da disponibilização da API pública do IntegraSUS sobre dados relacionados ao boletim epidemiológico covid-19 do estado do Ceará.|
 |   IBGE-CE     | [IBGE-CE](https://www.ibge.gov.br/cidades-e-estados/ce.html) | API pública do IBGE com dados populacionais do estado do Ceará.|
 
-# Qual o esquema/dicionário desse banco (o formato é livre)?
+# Dicionário de dados
 
 A tabela abaixo apresenta o dicionário de dados do conjunto.
 Nome da coluna/campo             |Descrição                                            |Tipo
@@ -162,7 +170,7 @@ O banco de dados do IntegraSUS/CE possui muitos registros (1.873.583) de pacient
 # Quais as transformações e tratamentos (e.g., dados faltantes e limpeza) feitos?
 Para o pré-processamento foram realizadas limpeza e transformação de dados, utilizando dois algoritmos de machine learning: florestas aleatórias (Random Forest) e Regression COX.  Os dados foram tratados e estão disponíveis para  acesso nos links: [Dataset1:RandomForest](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_random_florest.ipynb) e [Dataset2:Regression COX](https://github.com/softip/projeto_IA368X/blob/main/notebooks/Tratamentode_Dados_para_ML_Cox.ipynb).
 
-# Apresente aqui uma Análise Exploratória (inicial) sobre esta base.
+# Análise Exploratória de Dados.
 [Notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
 
 O conjunto de dados do IntegraSUS, utilizado neste trabalho, possui muitos dados faltantes, principalmente os dados relacionados as comorbidades que são de interesse de estudo. Cerca de 99% dos dados faltantes estavam relacionados as comorbidades, uma hipótese para a falta de dados relacionados as comorbidades é de que essas informações são coletadas apenas quando o paciente é internado ou busca por atendimento em uma unidade de saúde. A figura abaixo apresenta que a maior parte dos dados faltantes são de pessoas que não foram internadas.
@@ -195,37 +203,9 @@ Além disso, pode-se perceber que a taxa de letalidade da doença para casos mai
 
 ![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico8.png)
 
-
-# Integração entre Bases e Análise Exploratória
-Na etapa de análise exploratória foram utilizados as seguintes ferramentas:
-
-* Estatística descritiva e gráficos;
-* Análise correlação e gráficos de dispersão;
-
+Mais informações sobre as análise exploratória realizada pode ser acessado no noteboo:
 [Os resultados de análise exploratória estão descritos no notebook de análise exploratória.](https://github.com/softip/projeto_IA368X/blob/main/notebooks/E2_An%C3%A1lise_Explorat%C3%B3ria.ipynb)
 
-# Análises Realizadas
-As análises realizadas estão dividas nas seguintes etapas:
-
-1. Pré-processamento
-2. Análise Exploratória
-3. Machine Learning
-4. Conclusão
- 
-Na primeira etapa (análise exploratória) foram realizadas análises de dados para conhecer os dados, verificar quais dados estavam faltantes, realizar estatísticas descritivas, desenvolvimento de gráficos com intuito de melhorar a visualização destes dados, entre outros.
-
-Na segunda etapa (pré-processamento) foram realizadas a limpeza e transformação de dados, realizando a remoção ou imputação de dados faltantes. Também foram selecionados os features e o subconjunto de dados de interesse, além de realizar a junção dos diferentes datasets.
-
-Na terceira etapa (machine learning) foram realizadas análises de dados utilizando dois modelos (algoritmos) de machine learning: florestas aleatórias (Random Forest) e Regression COX.
-
-O Random Forest é um algoritmo de aprendizagem de máquina utilizado para realizar classificação e regressão. O algoritmo cria diversas árvores de decisão, escolhendo aleatoriamente as features que serão utilizadas em cada árvore. O resultado da classificação é realizado considerando os votos de cada árvore da floresta na predição realizada.
-
-O segundo modelo utilizado foi a Regressão de COX, que é uma análise de sobrevivência. A análise de sobrevivência é um conjunto de abordagens estatísticas usadas para descobrir o tempo que um evento de interesse (geralmente chamado de morte) leva para ocorrer leva. Essa abordagem é frequentemente utilizada em dados de saúde, para prever fatores associados à morte e tratamento com maior probabilidade de sobrevivência.
-
-Na quarta etapa (conclusão) foi realizada a interpretação dos resultados.
-
-# Ferramentas
-A análise exploratória dos dados foi realizada utilizando o notebook do Google Colab. A linguagem utilizada para processamento dos dados foi o Python com as bibliotecas Pandas e NumPy. Para visualização dos dados foram utilizadas as bibliotecas Matplotlib e Seaborn. A biblioteca Scikit Learn foi utilizada para construção de modelos de Machine Learning. 
 
 # Resultados
 
