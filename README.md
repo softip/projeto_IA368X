@@ -31,9 +31,9 @@ O primeiro notebook utiliza o algoritmo de florestas aleatórias (Random Forest)
 O segundo algoritmo utilizado é o Regression COX, que faz parte da família de algoritmos de análise de sobrevivência. O modelo criado tem o objetivo de prever quais características (fatores) contribuem para a morte devido a COVID-19.
 
 # Vídeos do Projeto
-| Vídeo da Proposta   | Vídeo da Apresentação Final | Slides do Proposta | Slides do Projeto Final  |
-|---------------------|-----------------------------|--------------------|--------------------------|
-|[Link para vídeo de apresentação da proposta do projeto.](https://youtu.be/59DZYWyoovo) | [Link para vídeo de apresentação final do projeto.](https://youtu.be/PZiL9D5mvsE) | [Slides da Apresentação](https://drive.google.com/file/d/1UVw2a4cfNNw-17ogSW_DAaoE-lfuQ9Z-/view?usp=sharing) | [Slides da Apresentação](https://drive.google.com/file/d/1w8w3I-188_QzMqYMKmWJ2pcuUQfWYXaU/view?usp=sharing) |
+| Vídeo da Proposta   |Vídeo da Apresentação Final | Slides do Proposta | Slides do Projeto Final  |
+|---------------------|---------------------|---------------------|---------------------|
+|[Link para vídeo.](https://youtu.be/59DZYWyoovo) | [Link para vídeo de apresentação.](https://youtu.be/PZiL9D5mvsE) | [Slides da Apresentação](https://drive.google.com/file/d/1UVw2a4cfNNw-17ogSW_DAaoE-lfuQ9Z-/view?usp=sharing) | [Slides da Apresentação](https://drive.google.com/file/d/1w8w3I-188_QzMqYMKmWJ2pcuUQfWYXaU/view?usp=sharing) |
 
 
 # Introdução e Referenciais de Teóricos
@@ -48,7 +48,7 @@ O SARS-CoV-2 foi nomeado como síndrome respiratória aguda grave coronavírus-2
 
 Um número de mortes de pacientes com doenças graves continuou a aumentar em todo o mundo. Estudos epidemiológicos têm mostrado que a mortalidade acomete mais pessoas idosas e portadoras de doenças crônicas subjacentes, que requerem hospitalização, cuidados intensivos e uso de ventiladores mecânicos [2, 5].
 
-# Caracterização do problema
+## Caracterização do problema
 Em 16/12/2020 o governo brasileiro lançou o Plano Nacional de Imunização - PNI. O plano apresenta a caracterização dos grupos de risco para agravamento e óbito pela COVID-19. De acordo com o PNI, os principais fatores de risco associados a progressão para formas graves da doença e ao óbito são:
 
 * idade superior a 60 anos; 
@@ -66,16 +66,16 @@ O PNI define 14 grupos prioritários para vacinação, sendo eles: Trabalhadores
 
 Com o surgimento de novas linhagens do vírus de maior transmissibilidade, pesquisadores brasileiros já apontaram uma piora na situação epidemiológica das regiões acometidas por essas variantes. Entretanto, diferentemente do que tem sido apontado, Freitas e colaboradores sugerem uma mudança no padrão de mortalidade da doença, já que jovens entre 20-39 anos têm sido a população mais acometida com uma taxa de letalidade maior em 2,7 vezes [9]. Assim, a ampla capacidade de mutacidade do Sars-CoV-2, bem como a mudança de foco de infecção do vírus reiteram mais do que nunca o início de ações como: maiores estudos sobre a eficácia das vacinas disponíveis no país, compartilhamento mais eficiente de dados e informações referentes à pandemia além de um maior engajamento por parte dos envolvidos na produção de conhecimento sobre o assunto no Brasil [10].
 
-# Motivação
+## Motivação
 
 Diante do problema apresentado na seção anterior, a motivação para este trabalho consiste na identificação de fatores associados ao óbito por COVID-19 em comparação aos óbitos por outras causas, no intuito de permitir a priorização de subgrupos para imunização ou em outros cenários aplicáveis.
 
-# Perguntas de Pesquisa
+## Perguntas de Pesquisa
 
 - Qual perfil da população Brasileira está mais suscetível ao óbito por meio de infecção por COVID-19?
 - Quais características implicam em maior mortalidade por COVID-19?
 
-# Objetivos do Projeto
+## Objetivos do Projeto
 
 O objetivo deste trabalho é estabelecer um perfil da população que seja mais suscetível à óbito por COVID-19, utilizando algoritmos de Machine Learn e dados demográficos do estado do Ceará para propor subgrupos de prioridade para imunização.
 
@@ -98,12 +98,12 @@ O Random Forest é um algoritmo de aprendizagem de máquina utilizado para reali
 A Regressão de COX, que é uma análise de sobrevivência. A análise de sobrevivência é um conjunto de abordagens estatísticas usadas para descobrir o tempo que um evento de interesse (geralmente chamado de morte) leva para ocorrer leva. Essa abordagem é frequentemente utilizada em dados de saúde, para prever fatores associados à morte e tratamento com maior probabilidade de sobrevivência.
 
 
-# Ferramentas
+## Ferramentas
 A análise exploratória dos dados foi realizada utilizando o notebook do Google Colab. A linguagem utilizada para processamento dos dados foi o Python com as bibliotecas Pandas e NumPy. Para visualização dos dados foram utilizadas as bibliotecas Matplotlib e Seaborn.
 
 A biblioteca Scikit Learn foi utilizada para construção de modelos de Machine Learning. O objetivo foi utilizar algoritmos supervisionados para prever os óbitos por Covid-19, dadas as características/comorbidades dos pacientes.
 
-# Bases Estudadas e Adotadas
+## Bases Estudadas e Adotadas
 Para responder às perguntas de pesquisa foi utilizada uma base de dados fornecida pelo Governo do Estado do Ceará. A base possui o registro dos infectados por COVID-19, apresentando suas comorbidades e o desfecho da infecção.
 
 | Base de Dados | Endereço na Web | Resumo descritivo |
@@ -113,7 +113,7 @@ Para responder às perguntas de pesquisa foi utilizada uma base de dados forneci
 
 O banco de dados do IntegraSUS/CE possui muitos registros (1.873.583) de pacientes do estado do Ceará com sintomas de COVID-19, apresentando 43 features (colunas), sendo algumas relevantes para este trabalho, como por exemplo a relação de comorbidades do paciente. Porém, cerca de 97% do dataset possui informações faltantes em relação às comorbidades e outros fatores de risco.
 
-# Dicionário de dados
+## Dicionário de dados
 
 A tabela abaixo apresenta o dicionário de dados do conjunto.
 Nome da coluna/campo             |Descrição                                            |Tipo
