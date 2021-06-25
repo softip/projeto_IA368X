@@ -196,8 +196,6 @@ Além disso, pode-se perceber que a taxa de letalidade da doença para casos mai
 ![alt text](https://catalogos.ifs.ifsuldeminas.edu.br/temp/grafico8.png)
 
 
-
-
 # Integração entre Bases e Análise Exploratória
 Na etapa de análise exploratória foram utilizados as seguintes ferramentas:
 
@@ -241,9 +239,9 @@ O modelo de florestas aleatórias apresentou que os fatores mais associados à m
 
 A regressão de COX foi utilizada para prever como diversas características colaboram para a redução do tempo de vida de um paciente infectado por Covid, ou seja, como essas características estão associadas à morte por Covid. Para interpretar o resultado da correlação de COX é necessário interpretar o Hazard Ratio (exp(coef)), ou a razão de risco, onde:
 
-*HR = 1: Sem efeito
-*HR < 1: Redução do risco de morte
-*HR > 1: Aumento do risco de morte
+* HR = 1: Sem efeito
+* HR < 1: Redução do risco de morte
+* HR > 1: Aumento do risco de morte
 
 Além disso, de avaliar a razão de risco (HR) faz-se necessário avaliar também a probabilidade do evento ser ao acaso (p-value). Após executar a regressão de COX e considerando um p-value < 0.05, verificamos que o fator idade entre 0 e 59 anos, a escolaridade e as puérpera possuem maior chances de sobrevivência, enquanto a idade maior que 60 anos, e as comorbidades de obesidade, neurológicas, renais e diabetes contribuem para o aumento das chances de morte. A figura abaixo apresenta como os fatores estão associados às chances de morte e sobrevivência devido a Covid. 
 
@@ -255,7 +253,11 @@ Um fato interessante é que o fator escolarização entre 6 a 14 anos apresentou
 
 # Discussão
 
-Concluiu-se que algumas comorbidades, como obesidade, doenças  cardiovasculares e diabetes, podem estar correlacionadas positivamente com a letalidade da COVID-19. Além disso, percebeu-se também que formas diferentes de tratamento dos mesmos dados podem influenciar consideravelmente os resultados obtidos por meio deles.
+As análises realizadas comprovaram que a idade superior a 60 anos contribui muito para o aumento do risco de morte. Além disso, algumas comorbidades não apresentam impacto elevado como se acreditava ao realizar a análise exploratória, como é o caso da comorbidade cardiovascular e do diabetes que apresentou aumento no risco de morte de 7%.
+
+Além disso, a condição de puérpera, considerada anteriormente como uma comorbidade e fator de risco, se mostrou como um fator que colabora para a redução do risco de morte. E a educação (escolaridade) se mostrou importante, mais uma vez, colaborando com a redução do risco de morte.
+
+Aproveitamos para pedir desculpas, pois na apresentação do trabalho a Regressão de COX apresentou uma falha. O fator idade foi considerado sem efeito, pois no conjunto de dados a característica idade era uma única coluna com valores numéricos discretos. Ocorre que as idades menores que 60 anos colaboram para a redução do risco de morte, enquanto que as idades maiores que 60 anos colaboram com o aumento do risco de morte, uma vez que havia uma única coluna com todas as idades, uma faixa etária anula a outra. Ao perceber o erro dividimos as idades em faixas etárias de 10 anos, após criamos uma coluna para cada faixa etária e preenchemos com 1 a coluna correspondente à faixa etária do paciente, as demais foram preenchidas com 0. Aproveitamos e realizamos o mesmo processo para as colunas sexo e raça.
 
 # Trabalhos Futuros
 
